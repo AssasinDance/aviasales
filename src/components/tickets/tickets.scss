@@ -56,6 +56,11 @@
     border: 1px solid #dfe5ec;
   }
 
+  &__label:focus-within {
+    outline: 3px solid #222;
+    z-index: 10;
+  }
+
   &__tickets-filter &__label--active {
     background-color: #2196f3;
     border-color: #2196f3;

@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { toggleFilter } from '../../store/slices/filter-slice'
@@ -8,6 +8,7 @@ import './filter.scss'
 
 export default function Filter() {
   const filters = useRef(null)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   const dispatch = useDispatch()
   const activeFilters = useSelector((state) => state.filters.filters)
   const filterOptions = [
@@ -22,9 +23,16 @@ export default function Filter() {
     filters.current.classList.toggle('filter--opened')
   }
 
+  window.addEventListener('resize', () => setWindowWidth(window.innerWidth))
+
   return (
     <div className="filter" ref={filters}>
-      <button className="filter__title" type="button" onClick={(e) => titleClickHandler(e)}>
+      <button
+        className="filter__title"
+        type="button"
+        tabIndex={windowWidth > 780 ? '-1' : '0'}
+        onClick={(e) => titleClickHandler(e)}
+      >
         Количество пересадок
       </button>
       {filterOptions.map((filter) => (
