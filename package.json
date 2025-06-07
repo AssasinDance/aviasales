@@ -13,8 +13,11 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-redux": "^9.2.0",
+    "redux-thunk": "^3.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.27.0",
@@ -35,6 +38,8 @@
     "install-peerdeps": "^3.0.7",
     "lint-staged": "^16.0.0",
     "prettier": "^3.5.3",
+    "sass": "^1.89.0",
+    "sass-embedded": "^1.89.0",
     "vite": "^6.3.5"
   },
   "husky": {

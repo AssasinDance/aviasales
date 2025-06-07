@@ -1,0 +1,41 @@
+.main-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  @media (max-width: 780px) {
+    width: 90%;
+  }
+
+  &__logo {
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 1px 11px 0 #37688e4d;
+    border-radius: 50px;
+  }
+
+  &__logo-link {
+    display: inline-block;
+    margin: 40px 0;
+    padding: 10px;
+    cursor: pointer;
+    height: 60px;
+    transition: transform 0.3s;
+    user-select: none;
+  }
+
+  &__logo-link:hover {
+    transform: scale(1.1);
+  }
+
+  &__content {
+    display: flex;
+    gap: 20px;
+
+    @media (max-width: 780px) {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+}
