@@ -9,10 +9,7 @@ import './filter.scss'
 export default function Filter() {
   const filters = useRef(null)
   const dispatch = useDispatch()
-  const activeFilters = useSelector((state) => {
-    // console.log(state)
-    return state.filters.filters
-  })
+  const activeFilters = useSelector((state) => state.filters.filters)
   const filterOptions = [
     { id: FILTERS.ALL, label: 'Все' },
     { id: FILTERS.WITHOUT_TRANSFER, label: 'Без пересадок' },
@@ -22,7 +19,6 @@ export default function Filter() {
   ]
 
   function titleClickHandler() {
-    // console.log(filters)
     filters.current.classList.toggle('filter--opened')
   }
 

@@ -9,7 +9,7 @@ export const fetchTickets = createAsyncThunk('tickets/fetchTickets', async (_, {
 
   const { searchId } = await searchResponse.json()
   let state = getState()
-  console.log(state)
+
   abortController.abort()
   abortController = new AbortController()
 
@@ -20,8 +20,6 @@ export const fetchTickets = createAsyncThunk('tickets/fetchTickets', async (_, {
       })
       const data = await ticketsResponse.json()
       dispatch(addTickets(data.tickets))
-      console.log(data)
-      console.log(state)
 
       if (data.stop) {
         dispatch(setComplete())
