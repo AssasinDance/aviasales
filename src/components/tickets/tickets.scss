@@ -56,8 +56,8 @@
     border: 1px solid #dfe5ec;
   }
 
-  &__label:focus-within {
-    outline: 3px solid #222;
+  &__label:has(&__radio:focus-visible) {
+    outline: 2px solid #222;
     z-index: 10;
   }
 

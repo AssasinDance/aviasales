@@ -76,7 +76,7 @@ export default function Tickets() {
   }
 
   function renderStatus() {
-    if (!isComplete && tickets.length === 0 && !isError)
+    if (!isComplete && (!tickets.length || !sortedTickets.length) && !isError && filters.length)
       return (
         <div className="loading instead-cards">
           <div className="lds-ripple">
@@ -133,7 +133,9 @@ export default function Tickets() {
               Показать еще 5 билетов!
             </button>
           )
-        : isComplete && <div className="sold-out instead-cards">Билетов с таким количеством пересадок нет</div>}
+        : (isComplete || !filters.length) && (
+            <div className="sold-out instead-cards">Билетов с таким количеством пересадок нет</div>
+          )}
     </div>
   )
 }
